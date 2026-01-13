@@ -1,5 +1,7 @@
 <ul>
-    <li>French Movies</li>
-    <li>Italian Movies</li>
-    <li>English Movies</li>
+ <% @events.each do |event| %>
+    <li>
+   <%= event %>
+   </li>
+    <% end %>
 </ul>
