@@ -1,0 +1,13 @@
+<section class="movie">
+  <div class="summary">
+    <h2><%= @movie.name %></h2>
+     From <%= @movie.country %>, 
+    had a budget of <%= number_to_currency(@movie.budget)%>, 
+    out in <strong><%= @movie.year %></strong>. 
+    <div class="rating">Rating <%= @movie.rating %>/5</div>
+    <p><%= @movie.description %></p>
+  </div>
+</section>
+<section class="admin">
+  <%= link_to "edit", edit_movie_path(@movie) %>
+</section>

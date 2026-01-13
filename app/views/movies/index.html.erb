@@ -1,0 +1,16 @@
+<% @movies.each do |movie| %>
+  <section class="event">
+    <div class="summary">
+      <h2><%= link_to movie.name, movie_path(movie) %></h2>
+      From <%= movie.country %>, 
+      had a budget of <%= number_to_currency(movie.budget)%>, 
+      out in <strong><%= movie.year %>
+      </strong>. 
+      <div class="rating">Rating <%= movie.rating %>/5</div>
+      <p><%= truncate(movie.description, length:50, separator: ' ') %>.</p>
+    </div>
+  </section>
+<% end %>
+<section>
+  <%= link_to "Add a movie", new_movie_path %>
+</section>

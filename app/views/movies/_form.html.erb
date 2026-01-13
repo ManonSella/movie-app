@@ -1,0 +1,12 @@
+<%= form_with(model: movie) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, autofocus: true %>
+  <%= form.label :year %>
+  <%= form.number_field :year %>
+  <%= form.label :description %>
+  <%= form.text_area :description, rows: 6 %>
+  <%= form.label :country %>
+  <%= form.select :country, ["America", "England", "France"] %>
+  <%= form.submit %><%# TODO: change button label with "" %>
+  <%# this is an ERB COMMENT %>
+<% end %>
