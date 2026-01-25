@@ -1,4 +1,6 @@
 <%= form_with(model: movie) do |form| %>
+  <%#<%= movie.errors.full_messages.to_sentence %>
+  <% render "shared/errors", object: movie %>
   <%= form.label :name %>
   <%= form.text_field :name, autofocus: true %>
   <%= form.label :year %>
@@ -7,6 +9,10 @@
   <%= form.text_area :description, rows: 6 %>
   <%= form.label :country %>
   <%= form.select :country, ["America", "England", "France"] %>
+  <%= form.label :theme %>
+  <%= form.text_field :theme %>
+  <%= form.label :picture_file_name %>
+  <%= form.text_field :picture_file_name %>
   <%= form.submit %><%# TODO: change button label with "" %>
   <%# this is an ERB COMMENT %>
 <% end %>

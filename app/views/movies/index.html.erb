@@ -1,7 +1,10 @@
 <% @movies.each do |movie| %>
   <section class="event">
+    <div class="image">
+      <%= image_tag movie.picture_file_name %>
+    </div>
     <div class="summary">
-      <h2><%= link_to movie.name, movie_path(movie) %></h2>
+      <h2><%= link_to movie.name, movie_path(movie) %> (<%= movie.theme %>)</h2>
       From <%= movie.country %>, 
       had a budget of <%= number_to_currency(movie.budget)%>, 
       out in <strong><%= movie.year %>

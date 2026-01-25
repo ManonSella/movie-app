@@ -1,7 +1,10 @@
 <section class="movie">
+  <div class="image">
+    <%= image_tag @movie.picture_file_name %>
+  </div>
   <div class="summary">
-    <h2><%= @movie.name %></h2>
-     From <%= @movie.country %>, 
+    <h2><%= @movie.name %> (<%= @movie.theme %>)</h2>
+    From <%= @movie.country %>, 
     had a budget of <%= number_to_currency(@movie.budget)%>, 
     out in <strong><%= @movie.year %></strong>. 
     <div class="rating">Rating <%= @movie.rating %>/5</div>
@@ -10,4 +13,5 @@
 </section>
 <section class="admin">
   <%= link_to "edit", edit_movie_path(@movie) %>
+  <%= link_to "delete", @movie, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
 </section>
