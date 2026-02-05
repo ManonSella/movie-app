@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   root "movies#index"
   get "events" => "events#index"
   get "events/1" => "events#index"
+  
+  resources :movies do
+    resources :reviews
+  end
+
   resources :users
+
   # get "movies" => "movies#index"
   # get "movies/new" => "movies#new"
   # get "movies/:id" => "movies#show", as: "movie"
