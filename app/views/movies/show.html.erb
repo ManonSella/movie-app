@@ -9,6 +9,15 @@
     out in <strong><%= @movie.year %></strong>. 
     <div class="rating">Rating <%= @movie.rating %>/5</div>
     <p><%= @movie.description %></p>
+    <div class="review">
+      <% if @movie.has_enough_reviews? %>
+        <span>There are enough reviews</span>
+      <% else %>
+        <%= link_to "Write a review", new_movie_review_path(@movie) %>
+      <% end %>
+      <%#= link_to "Write a review", new_movie_review_path(@movie) %>
+      <p><%= link_to "Who has written a review?", movie_reviews_path(@movie) %></p>
+    </div>
   </div>
 </section>
 <section class="admin">
