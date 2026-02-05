@@ -1,0 +1,9 @@
+<h1>Writing a review for <%= link_to @movie.name, @movie %></h1>
+<%= render "shared/errors", object: @review %>
+<%= form_with(model: [@movie, @review]) do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username, autofocus: true %>
+  <%= form.label :comment %>
+  <%= form.text_area :comment %>
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,6 @@
+<h1><%= @movie.name %></h1>
+<ul>
+  <% @movie.reviews.each do |review| %>
+    <li><%= review.comment %> by <%= review.username %></li>
+  <% end %>
+</ul>
