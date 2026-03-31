@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   root "movies#index"
   get "events" => "events#index"
   get "events/1" => "events#index"
-  
+
   resources :movies do
     resources :reviews
   end
 
   resources :users
+  resource :session, only: [ :new, :create, :destroy ]
+  get "signup" => "users#new"
 
   # get "movies" => "movies#index"
   # get "movies/new" => "movies#new"
@@ -18,5 +20,4 @@ Rails.application.routes.draw do
 
   # this "=>" sign means we want to run the movies controller
   # "show" is the conventional action to run the details of the movies, or any other entity
- 
 end

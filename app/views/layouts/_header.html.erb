@@ -5,6 +5,20 @@
         <%= link_to "All Movies", movies_path %>
       </li>
     </ul>
+    <ul>
+      <% if current_user %>
+        <li>
+          <%= link_to current_user.name, current_user  %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign in", new_session_path %>
+        </li>
+        <li>
+          <%= link_to "Sign up", signup_path %>
+        </li>
+      <% end %>
+    </ul>
   </nav>
   <h1>Movies</h1>
 </header>
